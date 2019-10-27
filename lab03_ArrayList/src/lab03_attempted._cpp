@@ -1,0 +1,73 @@
+//============================================================================
+// Name        : lab03_attempted.cpp
+// Author      : 
+// Version     :
+// Copyright   : Your copyright notice
+// Description : Hello World in C++, Ansi-style
+//============================================================================
+
+#include <iostream>
+#include "ListArray.h"
+#include "listArray.cpp" 
+using namespace std;
+
+int main()
+{
+
+List<int> mylist;
+
+cout<<mylist.isEmpty()<<endl;
+
+mylist.insert(7);
+mylist.insert(3);
+mylist.insert(9);
+mylist.insert(11);
+mylist.insert(7);
+mylist.insert(2);
+mylist.insert(11);
+mylist.insert(7);
+mylist.insert(2);
+mylist.insert(9);
+
+cout<<mylist.isEmpty()<<endl;
+
+mylist.showStructure();
+
+// now let's try a copy construct
+
+
+List<int> mylist2(mylist);
+
+//mylist2.showStructure();
+
+cout<<endl<<mylist.find(7)<<endl;
+
+
+cout<<mylist.getCursor()<<endl;
+mylist.gotoPrior();
+
+cout<<mylist.getCursor()<<endl;
+
+mylist.gotoBeginning();
+cout<<mylist.getCursor()<<endl;
+
+mylist.gotoNext();
+
+cout<<mylist.getCursor()<<endl;
+
+mylist.gotoNext();
+mylist.gotoNext();
+
+mylist.replace(0);
+
+mylist.showStructure();
+
+cout<<"empty? "<<mylist.isEmpty()<<endl;
+
+mylist.clear();
+
+cout<<"empty? "<<mylist.isEmpty()<<endl;
+
+cout<<mylist.getCursor()<<endl;
+	return 0;
+}
